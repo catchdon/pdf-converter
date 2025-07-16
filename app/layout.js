@@ -1,24 +1,15 @@
-import { Inter } from "next/font/google"
-import "./globals.css"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-
-const inter = Inter({ subsets: ["latin"] })
+// app/layout.js
 
 export const metadata = {
-  title: "FileConvert - Convert Files Online",
-  description: "Convert PDF, Word, Excel, PowerPoint, and image files online for free",
-}
+  title: "문서킹",
+  description: "문서를 빠르고 무료로 변환하세요",
+};
 
-export default function RootLayout({
-  children
-}) {
+export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+    <html lang="ko">
+      <body>
+        {children}
       </body>
     </html>
   );
