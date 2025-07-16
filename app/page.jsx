@@ -1,4 +1,5 @@
 // app/page.jsx 또는 app/page.tsx
+console.log("✅ 문서킹 메인 페이지가 빌드에 포함됨!");
 
 import WizardClient from "@/components/WizardClient";
 
