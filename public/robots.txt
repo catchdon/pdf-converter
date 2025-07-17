@@ -1,3 +1,9 @@
+# *
 User-agent: *
 Allow: /
+
+# Host
+Host: https://www.networkkings.website
+
+# Sitemaps
 Sitemap: https://www.networkkings.website/sitemap.xml
