@@ -105,14 +105,14 @@ export default function PdfSplitPage() {
     setIsConverted(false);
   };
 
-    useEffect(() => {
-    if (isConverted && convertedUrl && convertedFilename) {
-        const link = document.createElement("a");
-        link.href = convertedUrl;
-        link.download = convertedFilename;
-        link.click();
+  useEffect(() => {
+    if (isConverted && downloadUrl && downloadFilename) {
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.download = downloadFilename;
+      link.click();
     }
-    }, [isConverted, convertedUrl, convertedFilename]);   
+  }, [isConverted, downloadUrl, downloadFilename]);
 
   return (
     <div className="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
