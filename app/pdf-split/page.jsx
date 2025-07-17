@@ -7,6 +7,20 @@ import Link from "next/link";
 import { handleConvert as handlePdfSplit } from "@/lib/converters/pdfSplit";
 import { BiSolidFilePdf } from "react-icons/bi"
 
+export const metadata = {
+  title: "PDF 분할 - 원하는 페이지 범위로 나누기 | 문서킹",
+  description: "PDF 파일을 원하는 페이지 단위로 쉽고 빠르게 분할하세요! 여러 범위 지정, 무료 온라인 PDF 쪼개기 서비스.",
+  keywords: "PDF 분할, PDF 쪼개기, PDF 나누기, PDF 여러개로, PDF 범위 분할, 무료 PDF 분할, 문서킹",
+  openGraph: {
+    title: "PDF 분할 - 원하는 페이지 범위로 나누기 | 문서킹",
+    description: "페이지 범위를 입력해서 PDF를 여러 개로 분할! 원하는 부분만 골라 안전하게 나누세요.",
+    url: "https://www.networkkings.website/pdf-split",
+    images: [
+      { url: "/og-image.png", width: 1200, height: 630, alt: "PDF 분할" }
+    ],
+  }
+};
+
 export default function PdfSplitPage() {
   const [file, setFile] = useState(null);
   const [ranges, setRanges] = useState(""); // "1-3,5,7-8"
@@ -102,7 +116,7 @@ export default function PdfSplitPage() {
     setDownloadFilename(null);
     setIsConverted(false);
   };
-  
+
     useEffect(() => {
     if (isConverted && convertedUrl && convertedFilename) {
         const link = document.createElement("a");
