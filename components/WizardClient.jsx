@@ -152,7 +152,7 @@ export default function WizardClient() {
     } else {
       files.forEach(f => formData.append("files", f));
     }
-    let endpoint = `http://141.164.61.24:5000/convert/${toolKey}`;
+    let endpoint = `https://api.networkkings.website/convert/${toolKey}`;
 
     const res = await fetch(endpoint, { method: "POST", body: formData });
     const data = await res.json();
@@ -160,7 +160,7 @@ export default function WizardClient() {
 
     if (data?.success) {
       // 서버에서 filename만 오고 파일은 따로 /download/filename에서 blob으로 받는 방식이면
-      const downloadRes = await fetch(`http://141.164.61.24:5000/download/${data.filename}`);
+      const downloadRes = await fetch(`https://api.networkkings.website/download/${data.filename}`);
       const blob = await downloadRes.blob();
       const downloadUrl = window.URL.createObjectURL(blob);
 
@@ -184,31 +184,31 @@ export default function WizardClient() {
 
 
     if (optionTool === "pdf-to-excel") {
-      endpoint = "http://141.164.61.24:5000/convert/pdf-to-excel";
+      endpoint = "https://api.networkkings.website/convert/pdf-to-excel";
       formData.append("format", excelFormat);
     }
     if (optionTool === "image-resize") {
-      endpoint = "http://141.164.61.24:5000/convert/image-resize";
+      endpoint = "https://api.networkkings.website/convert/image-resize";
       formData.append("size", imgSize);
     }
     if (optionTool === "image-compress") {
-      endpoint = "http://141.164.61.24:5000/convert/image-compress";
+      endpoint = "https://api.networkkings.website/convert/image-compress";
       formData.append("quality", imgQuality);
     }
     if (optionTool === "pdf-compress") {
-      endpoint = "http://141.164.61.24:5000/convert/pdf-compress";
+      endpoint = "https://api.networkkings.website/convert/pdf-compress";
       formData.append("quality", pdfCompressQuality); // <== 라디오에서 선택한 값!
     }
     if (optionTool === "pdf-split") {
-      endpoint = "http://141.164.61.24:5000/convert/pdf-split";
+      endpoint = "https://api.networkkings.website/convert/pdf-split";
       formData.append("ranges", splitRange); // 백엔드가 "ranges"로 받을 것
     }
     if (optionTool === "pdf-extract") {
-      endpoint = "http://141.164.61.24:5000/convert/pdf-extract";
+      endpoint = "https://api.networkkings.website/convert/pdf-extract";
       formData.append("pages", extractRange);
     }
     if (optionTool === "pdf-remove") {
-      endpoint = "http://141.164.61.24:5000/convert/pdf-remove";
+      endpoint = "https://api.networkkings.website/convert/pdf-remove";
       formData.append("pages", removeRange); // "ranges"로 통일!
     }        
 
@@ -217,7 +217,7 @@ export default function WizardClient() {
     setProcessing(false);
 
     if (data?.success) {
-      const downloadRes = await fetch(`http://141.164.61.24:5000/download/${data.filename}`);
+      const downloadRes = await fetch(`https://api.networkkings.website/download/${data.filename}`);
       const blob = await downloadRes.blob();
       const downloadUrl = window.URL.createObjectURL(blob);
 
