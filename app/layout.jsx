@@ -36,11 +36,14 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({
-  children
-}) {
+export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="ko">
+      <head>
+        {/* 네이버 소유확인 meta */}
+        <meta name="naver-site-verification" content="a15e9c24bed6fa364370353014afb579be302a6a" />
+        {/* 필요하면 구글/빙/야후 등 기타 메타도 여기에 */}
+      </head>
       <body className={inter.className}>
         <Header />
         <main className="min-h-screen">{children}</main>
