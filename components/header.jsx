@@ -50,7 +50,13 @@ const menu = [
     ]
   },
   { name: "모든 도구", href: "/tools" },
-  { name: "소개", href: "/about" },
+  { 
+    name: "문서킹", children: [
+      {name: "소개", href: "/about"},
+      {name: "이용약관", href: "/terms"},
+      {name: "개인정보처리방침", href: "/privacy"},
+      {name: "문의", href: "/contact"}
+    ]}
 ];
 
 export function Header() {
