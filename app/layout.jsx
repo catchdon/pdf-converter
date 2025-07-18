@@ -55,6 +55,12 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
+                {/* Google AdSense 코드 - 소유권 인증용 */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-223732758246542"
+          crossOrigin="anonymous"
+        ></script>
       </head>
       <body className={inter.className}>
         <Header />
