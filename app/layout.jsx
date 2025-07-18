@@ -43,7 +43,17 @@ export default function RootLayout({ children }) {
         {/* 네이버 소유확인 meta */}
         <meta name="naver-site-verification" content="a15e9c24bed6fa364370353014afb579be302a6a" />
         <link rel="icon" href="/favicon.ico" />
-        {/* 필요하면 구글/빙/야후 등 기타 메타도 여기에 */}
+        {/* 네이버 애널리틱스 */}
+        <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if(!wcs_add) var wcs_add = {};
+              wcs_add["wa"] = "82a9610ad38048";
+              if(window.wcs) { wcs_do(); }
+            `,
+          }}
+        />
       </head>
       <body className={inter.className}>
         <Header />
