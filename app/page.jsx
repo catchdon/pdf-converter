@@ -17,7 +17,7 @@ export default function Page() {
         <div className="w-full max-w-3xl flex flex-col gap-7">
             {/* 1단계 */}
             <div className="flex flex-col items-center bg-white/95 p-10 rounded-3xl shadow-lg border hover:shadow-2xl transition">
-            <img src="/images/home_step1.gif" alt="파일 올리기" className="w-full h-44 md:h-56 rounded-2xl border mb-5 object-cover" />
+            <img src="/images/home_step1.gif" alt="파일 올리기" loading="lazy" className="w-full h-44 md:h-56 rounded-2xl border mb-5 object-cover" />
             <h3 className="font-bold text-blue-700 mb-2 text-xl md:text-2xl">1. 파일 올리기</h3>
             <p className="text-gray-700 text-base md:text-lg text-center">
                 변환할 파일을 <b>클릭 또는 드래그</b>해 업로드하세요.
@@ -25,7 +25,7 @@ export default function Page() {
             </div>
             {/* 2단계 */}
             <div className="flex flex-col items-center bg-white/95 p-10 rounded-3xl shadow-lg border hover:shadow-2xl transition">
-            <img src="/images/home_step2.gif" alt="도구 선택" className="w-full h-44 md:h-56 rounded-2xl border mb-5 object-cover" />
+            <img src="/images/home_step2.gif" alt="도구 선택" loading="lazy" className="w-full h-44 md:h-56 rounded-2xl border mb-5 object-cover" />
             <h3 className="font-bold text-blue-700 mb-2 text-xl md:text-2xl">2. 도구 선택</h3>
             <p className="text-gray-700 text-base md:text-lg text-center">
                 자동 추천되는 변환 도구 중 원하는 작업을 클릭!<br />
