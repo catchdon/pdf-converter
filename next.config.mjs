@@ -6,6 +6,17 @@ const nextConfig = {
     optimizeCss: true,
   },
   output: 'standalone',
+  trailingSlash: true,  // ← 추가
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.networkkings.website' }],
+        destination: 'https://networkkings.website/:path*',
+        permanent: true,
+      },
+    ]
+  },
 };
 
-export default nextConfig; // ✅ 이것만 있어야 함
+export default nextConfig;
