@@ -4,31 +4,26 @@ import { useEffect, useState } from "react"
 function isInAppBrowser() {
   if (typeof window === "undefined") return false;
   const ua = navigator.userAgent || "";
-  // 카카오톡, 페이스북, 인스타그램, 네이버앱 등 감지
+  // 카카오톡, 페이스북, 인스타그램, 라인 등 감지 (네이버앱 등 필요시 추가)
   return (
     ua.includes("KAKAOTALK") ||
     ua.includes("FBAN") ||
     ua.includes("FBAV") ||
     ua.includes("Instagram") ||
-    ua.includes("NAVER") ||
-    ua.includes("Daum") ||
     ua.includes("Line")
   );
 }
 
 export function InAppBrowserGuide() {
   const [show, setShow] = useState(false);
+  const [url, setUrl] = useState("");
 
   useEffect(() => {
-    if (isInAppBrowser()) setShow(true)
+    if (isInAppBrowser()) {
+      setShow(true);
+      setUrl(window.location.href);
+    }
   }, []);
-
-  // 외부 브라우저 열기
-  const openExternal = () => {
-    const url = window.location.href;
-    // iOS: window.open 사용, Android: a 태그 클릭이 더 잘 동작
-    window.open(url, "_blank");
-  };
 
   if (!show) return null;
 
@@ -44,19 +39,21 @@ export function InAppBrowserGuide() {
       }}
     >
       <span>
-        👉 더 편하게 이용하려면<br />
-        <b>외부 브라우저에서 열어주세요!</b>
+        👉 변환 파일을 다운받으려면<br />
+        <b>외부 브라우저를 이용해야해요!</b>
       </span>
-      <button
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener"
         style={{
           background: "#fff", color: "#222", border: "none",
           padding: "8px 14px", borderRadius: "6px", fontWeight: 600, marginLeft: "14px",
-          cursor: "pointer",
+          textDecoration: "none", cursor: "pointer",
         }}
-        onClick={openExternal}
       >
         외부 브라우저로 열기
-      </button>
+      </a>
     </div>
   );
 }
