@@ -1,8 +1,8 @@
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
-import ClientFooter from "@/components/ClientFooter"
-import ClientAnalytics from "@/components/ClientAnalytics"
+import { Footer } from "@/components/footer"
+import { Analytics } from "@vercel/analytics/react" 
 import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -18,7 +18,7 @@ export const metadata = {
     siteName: "문서킹",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.png", // public 폴더에 og-image.png 준비
         width: 1200,
         height: 630,
         alt: "문서킹 메인 이미지",
@@ -34,7 +34,7 @@ export const metadata = {
     images: ["/og-image.png"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.ico", // public 폴더에 favicon.ico 준비
   },
 };
 
@@ -50,8 +50,8 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Header />
         <main className="min-h-screen">{children}</main>
-        <ClientFooter />
-        <ClientAnalytics />
+        <Footer />
+        <Analytics />
 
         {/* ✅ 네이버 애널리틱스 lazyOnload 적용 */}
         <Script
