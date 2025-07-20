@@ -47,6 +47,10 @@ export default function RootLayout({ children }) {
         <meta name="google-adsense-account" content="ca-pub-2232732758246542" />
         <meta name="naver-site-verification" content="a15e9c24bed6fa364370353014afb579be302a6a" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512.png" />
         <link rel="preconnect" href="https://ssl.pstatic.net" crossOrigin="" />
         <link rel="preconnect" href="https://nam.veta.naver.com" crossOrigin="" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
