@@ -1,14 +1,11 @@
 import { Inter } from "next/font/google"
 import "./globals.css"
-import dynamic from "next/dynamic"
 import { Header } from "@/components/header"
+import ClientFooter from "@/components/ClientFooter"
+import ClientAnalytics from "@/components/ClientAnalytics"
 import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
-
-// Footer와 Analytics를 동적으로 import (코드 스플리팅 적용)
-const Footer = dynamic(() => import("@/components/footer"), { ssr: false })
-const Analytics = dynamic(() => import("@vercel/analytics/react"), { ssr: false })
 
 export const metadata = {
   title: "문서킹 - 무료 파일 변환기",
@@ -53,8 +50,8 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Header />
         <main className="min-h-screen">{children}</main>
-        <Footer />
-        <Analytics />
+        <ClientFooter />
+        <ClientAnalytics />
 
         {/* ✅ 네이버 애널리틱스 lazyOnload 적용 */}
         <Script
