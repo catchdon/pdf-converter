@@ -47,6 +47,8 @@ export default function RootLayout({ children }) {
         <meta name="google-adsense-account" content="ca-pub-2232732758246542" />
         <meta name="naver-site-verification" content="a15e9c24bed6fa364370353014afb579be302a6a" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://ssl.pstatic.net" crossOrigin="" />
+        <link rel="preconnect" href="https://nam.veta.naver.com" crossOrigin="" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="preload" as="style" href="/_next/static/css/0540e53a0da54d97.css" />
