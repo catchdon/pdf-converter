@@ -4,6 +4,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Analytics } from "@vercel/analytics/react" 
 import Script from "next/script"
+import { InAppBrowserGuide } from "@/components/InAppBrowserGuide"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -48,6 +49,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
+        <InAppBrowserGuide />
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
