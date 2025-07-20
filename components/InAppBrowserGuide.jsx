@@ -32,15 +32,22 @@ export function InAppBrowserGuide() {
         display: "flex", alignItems: "center", justifyContent: "center",
         boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
         flexDirection: "column",
+        textAlign: "center",        // ✅ 중앙 정렬
       }}
     >
       <b style={{ fontSize: "16px", marginBottom: "4px" }}>
-        ⚠️ 안내: 다운로드 또는 파일 변환이 안 될 때는?
+        ⚠️ 안내: 변환 파일 다운로드는 메시지앱 내에서 불가능해요
       </b>
-      <div>
+      <div style={{ textAlign: "center" }}>
         카카오톡, 인스타, 페이스북 등 앱 내에서<br />
-        <b>오른쪽 상단 <span style={{color: "#ffe066"}}>… 메뉴</span>를 눌러</b><br />
-        <b style={{color: "#ffe066"}}>“다른 브라우저로 열기(네이버·사파리·구글)”</b>를 선택해주세요!
+        <b>
+          <span style={{color: "#ffe066"}}>공유하기 아이콘</span>을 눌러
+        </b>
+        <br />
+        <b style={{color: "#ffe066"}}>
+          “다른 브라우저로 열기(네이버·사파리·구글)”
+        </b>
+        를 선택해주세요!
       </div>
       {/* 아래에 안내용 이미지, GIF, 아이콘 등 추가 가능 */}
       {/* <img src="/inapp-browser-guide.gif" alt="외부 브라우저 안내" style={{marginTop: 8, maxHeight: 40}} /> */}
