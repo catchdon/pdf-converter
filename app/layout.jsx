@@ -1,11 +1,14 @@
 import { Inter } from "next/font/google"
 import "./globals.css"
+import dynamic from "next/dynamic"
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Analytics } from "@vercel/analytics/react" 
 import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
+
+// Footer와 Analytics를 동적으로 import (코드 스플리팅 적용)
+const Footer = dynamic(() => import("@/components/footer"), { ssr: false })
+const Analytics = dynamic(() => import("@vercel/analytics/react"), { ssr: false })
 
 export const metadata = {
   title: "문서킹 - 무료 파일 변환기",
@@ -18,7 +21,7 @@ export const metadata = {
     siteName: "문서킹",
     images: [
       {
-        url: "/og-image.png", // public 폴더에 og-image.png 준비
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "문서킹 메인 이미지",
@@ -34,7 +37,7 @@ export const metadata = {
     images: ["/og-image.png"],
   },
   icons: {
-    icon: "/favicon.ico", // public 폴더에 favicon.ico 준비
+    icon: "/favicon.ico",
   },
 };
 
