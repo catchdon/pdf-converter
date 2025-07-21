@@ -1,6 +1,12 @@
-import CanonicalTag from "@/components/CanonicalTag";
+import { headers } from "next/headers";
 
 export default function Head() {
+  // SSR에서 현재 경로 추출
+  // Next 14+에서는 headers().get("x-invoke-path")가 동작 (구버전이면 generateMetadata 사용)
+  const host = "https://www.networkkings.website";
+  const pathname = headers().get("x-invoke-path") || "/";
+  const canonicalUrl = host + pathname;
+
   return (
     <>
       <title>문서킹 - 무료 파일 변환기</title>
@@ -10,7 +16,7 @@ export default function Head() {
       <meta name="google-adsense-account" content="ca-pub-2232732758246542" />
       <meta name="naver-site-verification" content="a15e9c24bed6fa364370353014afb579be302a6a" />
       {/* 캐노니컬 */}
-      <CanonicalTag />
+      <link rel="canonical" href={canonicalUrl} />
       {/* 파비콘 및 앱 아이콘 */}
       <link rel="icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" href="/apple-icon.png" />
