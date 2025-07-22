@@ -1,6 +1,29 @@
 export const metadata = {
   title: "이용약관 | 문서킹",
   description: "문서킹 서비스의 이용약관을 안내합니다.",
+  keywords: [
+    "문서킹", "이용약관", "서비스 약관", "무료 파일 변환", "문서킹 이용규정", "문서킹 정책"
+  ],
+  alternates: {
+    canonical: "https://www.networkkings.website/terms",
+  },
+  openGraph: {
+    title: "이용약관 | 문서킹",
+    description: "문서킹 서비스의 이용약관을 안내합니다.",
+    url: "https://www.networkkings.website/terms",
+    images: [
+      { url: "/og-image.png", width: 1200, height: 630, alt: "문서킹 이용약관" }
+    ],
+    siteName: "문서킹",
+    locale: "ko_KR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "이용약관 | 문서킹",
+    description: "문서킹 서비스의 이용약관을 안내합니다.",
+    images: ["/og-image.png"]
+  }
 };
 
 export default function TermsPage() {

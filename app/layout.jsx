@@ -5,12 +5,13 @@ import { Footer } from "@/components/footer"
 import { Analytics } from "@vercel/analytics/react"
 import Script from "next/script"
 import { InAppBrowserGuide } from "@/components/InAppBrowserGuide"
+import SchemaOrganization from "@/components/SchemaOrganization";
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "문서킹 - 무료 파일 변환기",
-  description: "문서킹에서 PDF, 워드, 엑셀, 이미지 파일을 쉽고 빠르게 무료로 변환하세요. 설치·광고·회원가입 없이 완전 무료!",
+  description: "문서킹에서 PDF, 워드, 엑셀, 파워포인트, 이미지 파일을 쉽고 빠르게 무료로 변환하세요. 설치·회원가입 없이 완전 무료! 국내 서버를 운용하기 때문에 어느 곳 보다 빠른 속도를 누릴 수 있습니다!",
   keywords: [
     "문서킹", "파일변환", "PDF변환", "이미지변환", "문서 변환기", "웹 변환툴", "jpg png heic pdf xlsx ppt"
   ],
@@ -59,6 +60,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body className={inter.className}>
+        <SchemaOrganization />
         <InAppBrowserGuide />
         <Header />
         <main className="min-h-screen">{children}</main>
