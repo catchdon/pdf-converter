@@ -1,6 +1,7 @@
 // app/page.jsx 또는 app/page.tsx
 
 import WizardClient from "@/components/WizardClient";
+import SchemaFAQ from "@/components/SchemaFAQ";
 
 export default function Page() {
   return (

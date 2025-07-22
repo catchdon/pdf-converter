@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/react"
 import Script from "next/script"
 import { InAppBrowserGuide } from "@/components/InAppBrowserGuide"
 import SchemaOrganization from "@/components/SchemaOrganization";
+import SchemaWebApp from "@/components/SchemaWebApp";
 
 const inter = Inter({ subsets: ["latin"] })
 
