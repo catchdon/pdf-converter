@@ -100,6 +100,7 @@ export default function Page() {
             </li>
         </ul>
         </div>
+        <SchemaFAQ />
       </section>
 
       {/* CTA 배너 */}

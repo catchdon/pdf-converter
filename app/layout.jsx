@@ -61,6 +61,7 @@ export default function RootLayout({ children }) {
     <html lang="ko">
       <body className={inter.className}>
         <SchemaOrganization />
+        <SchemaWebApp />
         <InAppBrowserGuide />
         <Header />
         <main className="min-h-screen">{children}</main>
