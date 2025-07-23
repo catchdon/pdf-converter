@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Upload, FileText, Loader2, Download } from "lucide-react";
+import Script from "next/script"
 
 // 지원되는 변환 기능/옵션 정의
 const conversionOptions = [
@@ -289,7 +290,22 @@ export default function WizardClient() {
           </CardContent>
         </Card>
       </div>
-
+      {/* 👇👇 파일 업로드된 경우 광고 노출! 👇👇 */}
+      {files.length > 0 && (
+        <div className="ad-placeholder mt-4 mb-4" style={{ minHeight: 280, width: "100%", maxWidth: 640 }}>
+          <div style={{ textAlign: 'left', fontSize: 12, color: '#aaa', marginBottom: 4 }}>광고</div>
+          <ins className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="ca-pub-2232732758246542"
+            data-ad-slot="5287055426"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+          <Script id="adsbygoogle-inpage-init" strategy="afterInteractive">
+            {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+          </Script>
+        </div>
+      )}
+      {/* 👆👆 여기! 👆👆 */}
       {/* 변환 버튼/옵션 */}
       <div className="w-full max-w-2xl">
         <Card>
