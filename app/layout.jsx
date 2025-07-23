@@ -68,6 +68,12 @@ export default function RootLayout({ children }) {
         <main className="min-h-screen">{children}</main>
         <Footer />
         <Analytics />
+        <Script
+          id="adsense-script"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2232732758246542"
+          crossOrigin="anonymous"
+        />
         {/* 네이버 애널리틱스 lazyOnload 적용 */}
         <Script
           src="https://wcs.naver.net/wcslog.js"
